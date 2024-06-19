@@ -1,0 +1,68 @@
+
+@bg-color: #b7d4a0;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+#main {
+  width: 360px;
+  height: 420px;
+  background-color: @bg-color;
+  margin: 100px auto;
+  border: 10px solid #333;
+  border-radius: 5px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-around;
+
+  #stage {
+    width: 300px;
+    height: 300px;
+    border: 2px solid #333;
+    position: relative;
+
+    //设置蛇的样式
+    #snake {
+        &>div {
+          width: 10px;
+          height: 10px;
+          background-color: #333;
+          border: 1px solid @bg-color;
+          //开启绝对定位
+          position: absolute;
+        }
+    }
+
+    //设置食物的样式
+    #food {
+      width: 10px;
+      height: 10px;
+      //开启绝对定位
+      position: absolute;
+      left: 40px;
+      top: 40px;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-content: space-between;
+
+      &>div {
+        width: 4px;
+        height: 4px;
+        background-color: #333;
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  #score-panel {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+}
+
